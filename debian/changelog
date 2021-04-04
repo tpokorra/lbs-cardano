@@ -1,3 +1,9 @@
+libsodium (1.0.18-2) unstable; urgency=medium
+
+  * build libsodium from Cardano branch with support for VRF
+
+ -- Timotheus Pokorra <timotheus.pokorra@solidcharity.com>  Tue, 6 Apr 2021 12:00:00 +0000
+
 libsodium (1.0.18-1) unstable; urgency=medium
 
   * New upstream release.

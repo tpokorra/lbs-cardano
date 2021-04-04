@@ -1,0 +1,6 @@
+lbs:
+  source:
+    # according to https://docs.cardano.org/projects/cardano-node/en/latest/getting-started/install.html#installing-libsodium
+    # this is the top of branch https://github.com/input-output-hk/libsodium/tree/tdammers/rebased-vrf
+    download: 
+      "libsodium-vrf.tar.gz": "https://github.com/input-output-hk/libsodium/archive/66f017f1.tar.gz"
