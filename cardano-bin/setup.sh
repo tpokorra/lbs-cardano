@@ -37,5 +37,6 @@ mkdir -p /root/cardano-bin
 cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-node-$stabletag/x/cardano-node/build/cardano-node/cardano-node /root/cardano-bin
 cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-cli-$stabletag/x/cardano-cli/build/cardano-cli/cardano-cli /root/cardano-bin
 cd /root
-tar czf /root/lbs-cardano/cardano-bin/cardano-bin.tar.gz cardano-bin
+mkdir /root/sources
+tar czf /root/sources/cardano-bin.tar.gz cardano-bin
 
