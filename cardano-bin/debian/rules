@@ -28,9 +28,11 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/gentoo.
-	mkdir -p $(CURDIR)/debian/cardano-bin/usr/share/cardano-bin
-	cp /tmp/buildroot/cardano-node $(CURDIR)/debian/cardano-bin/usr/share/cardano-bin
-	cp /tmp/buildroot/cardano-cli $(CURDIR)/debian/cardano-bin/usr/share/cardano-bin
+	mkdir -p $(CURDIR)/debian/cardano-bin/usr/share/cardano
+	cp /tmp/buildroot/cardano-node $(CURDIR)/debian/cardano-bin/usr/share/cardano
+	cp /tmp/buildroot/cardano-cli $(CURDIR)/debian/cardano-bin/usr/share/cardano
+	cp /tmp/buildroot/*.service $(CURDIR)/debian/cardano-bin/etc/systemd/system
+	cp /tmp/buildroot/*.sh $(CURDIR)/debian/cardano-bin/usr/share/cardano
 
 
 # Build architecture-independent files here.

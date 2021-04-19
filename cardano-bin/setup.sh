@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export stabletag=1.26.2
-
 apt-get -y install rsync curl git sudo xz-utils || exit -1
 
 apt-get -y install gnupg apt-transport-https ca-certificates libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev tmux jq wget libncursesw5  || exit -1
@@ -23,6 +21,14 @@ git clone https://github.com/input-output-hk/cardano-node.git || exit -1
 cd cardano-node
 git fetch --all --recurse-submodules --tags
 
+get_latest_release() {
+  curl --silent "https://api.github.com/repos/$1/releases/latest" | # Get latest release from GitHub api
+    grep '"tag_name":' |                                            # Get tag line
+    sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
+}
+
+stabletag=get_latest_release "input-output-hk/cardano-node"
+
 git checkout tags/$stabletag -b stable-$stabletag
 export PATH=$PATH:/opt/cabal/bin/:/opt/ghc/bin/
 cabal update || exit -1
@@ -40,3 +46,5 @@ cd /root
 mkdir /root/sources
 tar czf /root/sources/cardano-bin.tar.gz cardano-bin
 
+sed -i  "s/1.0.0/$stabletag/g" debian/changelog
+sed -i  "s/1.0.0/$stabletag/g" cardano-bin.dsc
