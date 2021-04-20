@@ -27,7 +27,7 @@ get_latest_release() {
     sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
 }
 
-stabletag=get_latest_release "input-output-hk/cardano-node"
+stabletag=`get_latest_release "input-output-hk/cardano-node"`
 
 git checkout tags/$stabletag -b stable-$stabletag
 export PATH=$PATH:/opt/cabal/bin/:/opt/ghc/bin/
