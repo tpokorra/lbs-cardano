@@ -46,6 +46,6 @@ cd /root
 mkdir /root/sources
 tar czf /root/sources/cardano-bin.tar.gz cardano-bin
 
-cd ~/lbs-cardano/cardano
+cd ~/lbs-cardano/cardano-bin
 sed -i  "s/1.0.0/$stabletag/g" debian/changelog
 sed -i  "s/1.0.0/$stabletag/g" cardano-bin.dsc
