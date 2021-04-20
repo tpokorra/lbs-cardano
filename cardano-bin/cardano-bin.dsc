@@ -1,6 +1,6 @@
 Format: 1.0
 Source: cardano-bin
-Version: 1.26.2-%{release}
+Version: 1.0.0-%{release}
 Binary: cardano-bin
 Maintainer: Timotheus Pokorra <timotheus.pokorra@solidcharity.com>
 Architecture: any
