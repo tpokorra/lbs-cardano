@@ -6,3 +6,7 @@ export PATH=$PATH:/usr/share/cardano
 systemctl status cardano-passive | cat
 cardano-cli --version
 cardano-cli query tip --mainnet
+
+echo
+echo
+free -mh
