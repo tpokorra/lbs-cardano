@@ -1,0 +1,19 @@
+[Unit]
+Description=Cardano Passive Testnet Node
+Requires=network.target
+
+[Service]
+Type=simple
+SyslogIdentifier=cardano-passive-testnet
+Restart=always
+RestartSec=5
+User=cardano
+Group=cardano
+KillSignal=SIGINT
+LimitNOFILE=32768
+WorkingDirectory=/home/cardano
+ExecStart=/usr/share/cardano/startPassiveTestnetNode.sh
+
+[Install]
+WantedBy=multi-user.target
+
