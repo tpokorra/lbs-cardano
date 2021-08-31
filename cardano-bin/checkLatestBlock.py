@@ -14,9 +14,12 @@ process = subprocess.Popen(bashCmd, stdout=subprocess.PIPE, env=my_env)
 
 output, error = process.communicate()
 mynode = json.loads(output)
+print("<pre>")
 print("my node: ")
+#print(mynode)
 print("  epoch: {0}".format(mynode['epoch']))
 print("  block: {0}".format(mynode['block']))
+print("  sync:  {0}".format(mynode['syncProgress']))
 
 response = requests.get("https://api.blockchair.com/cardano/stats/")
 
@@ -28,10 +31,14 @@ if response.status_code == 200:
   print("  block: {0}".format(check['best_block_height']))
   print("  time:  {0}".format(check['best_block_time']))
 
-if check['best_block_epoch'] == mynode['epoch']:
+  if check['best_block_epoch'] == mynode['epoch']:
     if mynode['block'] - check['best_block_height'] <= 10:
         print("my node is uptodate")
         exit()
+
+if float(mynode['syncProgress']) > 99.0 and float(mynode['syncProgress']) <= 100.0:
+  print("my node is uptodate")
+  exit()
 
 print("my node is not uptodate")
 exit(-1)
