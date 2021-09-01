@@ -8,10 +8,10 @@ systemctl status cardano-passive-testnet | cat
 cardano-cli --version
 
 online=1
-cardano-cli query tip --testnet || online=0
+cardano-cli query tip --testnet-magic 1097911063  || online=0
 if [[ $online -eq 1 ]]
 then
-  json=`cardano-cli query tip --testnet`
+  json=`cardano-cli query tip --testnet-magic 1097911063`
   echo $json > $CARDANO_NODE_PATH/logs/current_tip.log
 fi
 
