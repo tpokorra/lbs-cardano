@@ -12,7 +12,8 @@ Group=cardano
 KillSignal=SIGINT
 LimitNOFILE=32768
 WorkingDirectory=/home/cardano
-ExecStart=/usr/share/cardano-scripts/startNode.sh
+# this script must be provided from https://github.com/tpokorra/cardano-scripts
+ExecStart=/usr/share/cardano/startNode.sh
 
 [Install]
 WantedBy=multi-user.target
