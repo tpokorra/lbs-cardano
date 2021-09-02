@@ -31,8 +31,6 @@ install: build
 	mkdir -p $(CURDIR)/debian/cardano-bin/usr/share/cardano
 	cp /tmp/buildroot/cardano-node $(CURDIR)/debian/cardano-bin/usr/share/cardano
 	cp /tmp/buildroot/cardano-cli $(CURDIR)/debian/cardano-bin/usr/share/cardano
-	cp /tmp/buildroot/*.py $(CURDIR)/debian/cardano-bin/usr/share/cardano
-	cp /tmp/buildroot/*.sh $(CURDIR)/debian/cardano-bin/usr/share/cardano
 	mkdir -p $(CURDIR)/debian/cardano-bin/etc/systemd/system
 	cp /tmp/buildroot/*.service $(CURDIR)/debian/cardano-bin/etc/systemd/system
 
