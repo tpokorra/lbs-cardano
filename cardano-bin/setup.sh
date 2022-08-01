@@ -1,5 +1,7 @@
 #!/bin/bash
 
+branch=$1
+
 apt-get -y install rsync curl git sudo xz-utils || exit -1
 
 apt-get -y install gnupg apt-transport-https ca-certificates libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev tmux jq wget libncursesw5  || exit -1
@@ -27,9 +29,14 @@ get_latest_release() {
     sed -E 's/.*"([^"]+)".*/\1/'                                    # Pluck JSON value
 }
 
-stabletag=`get_latest_release "input-output-hk/cardano-node"`
+if [[ "$branch" == "test" ]]
+then
+  tag="1.35.2"
+else
+  tag=`get_latest_release "input-output-hk/cardano-node"`
+fi
 
-git checkout tags/$stabletag -b stable-$stabletag
+git checkout tags/$tag -b stable-$tag
 export PATH=$PATH:/opt/cabal/bin/:/opt/ghc/bin/
 cabal update || exit -1
 cabal configure --with-compiler=ghc-8.10.4 || exit -1
@@ -40,12 +47,12 @@ mkdir -p ~/.local/bin
 cabal install --installdir ~/.local/bin cardano-cli cardano-node || exit -1
 
 mkdir -p /root/cardano-bin
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-node-$stabletag/x/cardano-node/build/cardano-node/cardano-node /root/cardano-bin
-cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-cli-$stabletag/x/cardano-cli/build/cardano-cli/cardano-cli /root/cardano-bin
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-node-$tag/x/cardano-node/build/cardano-node/cardano-node /root/cardano-bin
+cp -p dist-newstyle/build/x86_64-linux/ghc-8.10.4/cardano-cli-$tag/x/cardano-cli/build/cardano-cli/cardano-cli /root/cardano-bin
 cd /root
 mkdir /root/sources
 tar czf /root/sources/cardano-bin.tar.gz cardano-bin
 
 cd ~/lbs-cardano/cardano-bin
-sed -i  "s/1.0.0/$stabletag/g" debian/changelog
-sed -i  "s/1.0.0/$stabletag/g" cardano-bin.dsc
+sed -i  "s/1.0.0/$tag/g" debian/changelog
+sed -i  "s/1.0.0/$tag/g" cardano-bin.dsc
