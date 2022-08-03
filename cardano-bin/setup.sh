@@ -3,7 +3,7 @@
 branch=$1
 
 apt-get -y install rsync curl git sudo xz-utils || exit -1
-
+apt-get update
 apt-get -y install gnupg apt-transport-https ca-certificates libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev tmux jq wget libncursesw5 libsecp256k1-dev || exit -1
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4796B710919684AC || exit -1
 echo 'deb http://downloads.haskell.org/debian buster main' >> /etc/apt/sources.list
