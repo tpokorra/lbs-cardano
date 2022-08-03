@@ -5,7 +5,7 @@ Format: 3.0 (quilt)
 Source: libsecp256k1
 Binary: libsecp256k1-0, libsecp256k1-dev
 Architecture: any
-Version: 0.1~20220711-1
+Version: 0.1~20220227-1
 Maintainer: Debian Cryptocoin Team <team+cryptocoin@tracker.debian.org>
 Uploaders: Jonas Smedegaard <dr@jones.dk>
 Homepage: https://github.com/bitcoin/secp256k1
@@ -16,14 +16,8 @@ Build-Depends: debhelper-compat (= 13), pkg-config, libgmp-dev, autoconf-archive
 Package-List:
  libsecp256k1-0 deb libs optional arch=any
  libsecp256k1-dev deb libdevel optional arch=any
-Checksums-Sha1:
- d828cb35aaa1f36e8cd5d9023226eb352a612487 2201956 libsecp256k1_0.1~20220711.orig.tar.xz
- 9b68795ef10705355191f7a60a0591db6edf2e9e 8352 libsecp256k1_0.1~20220711-1.debian.tar.xz
-Checksums-Sha256:
- 1e350c1d66b304525e2534d4501749d9524e55d71719ca843ea87a3594f6ae8b 2201956 libsecp256k1_0.1~20220711.orig.tar.xz
- c910c15ee81698df6c3b8744f59e2520f87a574501693e2c25c5a51ddc6cc954 8352 libsecp256k1_0.1~20220711-1.debian.tar.xz
 Files:
- 283c2a5fb5bae4c51da28529af808575 2201956 libsecp256k1_0.1~20220711.orig.tar.xz
+ abc 1 libsecp256k1_cardano.tar.gz
  db487d8aad2760c6d61045252b6321cb 8352 libsecp256k1_0.1~20220711-1.debian.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
