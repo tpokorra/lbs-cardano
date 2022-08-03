@@ -7,5 +7,5 @@ Homepage: http://www.solidcharity.com
 
 Package: cardano-bin
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, gnupg, apt-transport-https, ca-certificates, libffi7, libgmp10, libssl1.1, libtinfo6, libsystemd0, zlib1g, tmux, jq, wget, libncursesw5
+Depends: ${shlibs:Depends}, ${misc:Depends}, gnupg, apt-transport-https, ca-certificates, libffi7, libgmp10, libssl1.1, libtinfo6, libsystemd0, zlib1g, tmux, jq, wget, libncursesw5, libsecp256k1-0
 Description: Binaries for running a cardano node
