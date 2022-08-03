@@ -27,15 +27,7 @@ libsecp256k1.so.0 libsecp256k1-0 #MINVER#
  secp256k1_ec_seckey_tweak_add@Base 0.1~20201209
  secp256k1_ec_seckey_tweak_mul@Base 0.1~20201209
  secp256k1_ec_seckey_verify@Base 0.1~20160216
- secp256k1_ecdh@Base 0.1~20201209
- secp256k1_ecdh_hash_function_default@Base 0.1~20201209
- secp256k1_ecdh_hash_function_sha256@Base 0.1~20201209
- secp256k1_ecdsa_recover@Base 0.1~20160216
- secp256k1_ecdsa_recoverable_signature_convert@Base 0.1~20160216
- secp256k1_ecdsa_recoverable_signature_parse_compact@Base 0.1~20160216
- secp256k1_ecdsa_recoverable_signature_serialize_compact@Base 0.1~20160216
  secp256k1_ecdsa_sign@Base 0.1~20160216
- secp256k1_ecdsa_sign_recoverable@Base 0.1~20160216
  secp256k1_ecdsa_signature_normalize@Base 0.1~20160216
  secp256k1_ecdsa_signature_parse_compact@Base 0.1~20160216
  secp256k1_ecdsa_signature_parse_der@Base 0.1~20160216
@@ -50,7 +42,6 @@ libsecp256k1.so.0 libsecp256k1-0 #MINVER#
  secp256k1_nonce_function_bip340@Base 0.1~20201209
  secp256k1_nonce_function_default@Base 0.1~20160216
  secp256k1_nonce_function_rfc6979@Base 0.1~20160216
- secp256k1_schnorrsig_sign32@Base 0.1~20220711
  secp256k1_schnorrsig_sign@Base 0.1~20201209
  secp256k1_schnorrsig_sign_custom@Base 0.1~20210825
  secp256k1_schnorrsig_verify@Base 0.1~20201209

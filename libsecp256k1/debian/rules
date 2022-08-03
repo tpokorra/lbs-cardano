@@ -5,10 +5,7 @@
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		--enable-module-recovery \
-		--enable-module-ecdh \
 		--enable-experimental \
-		--enable-module-extrakeys \
 		--enable-module-schnorrsig
 
 # Let d-shlibs calculate development package dependencies
