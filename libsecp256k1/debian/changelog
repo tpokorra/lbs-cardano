@@ -1,0 +1,257 @@
+libsecp256k1 (0.1~20220711-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 0.1~20220711 (Closes: #1006505)
+  * symbols: Add new secp256k1_schnorrsig_sign32
+
+ -- Bastian Germann <bage@debian.org>  Thu, 14 Jul 2022 19:33:49 +0200
+
+libsecp256k1 (0.1~20210825-2) unstable; urgency=medium
+
+  * update symbols file
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 10 Sep 2021 23:27:27 +0200
+
+libsecp256k1 (0.1~20210825-1) experimental; urgency=medium
+
+  * declare compliance with Debian Policy 4.6.0
+  * improve source helper script copyright-check
+  * update copyright info: update coverage
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 10 Sep 2021 12:53:53 +0200
+
+libsecp256k1 (0.1~20210108-1) unstable; urgency=medium
+
+  [ upstream ]
+  * development snapshot
+
+  [ Jonas Smedegaard ]
+  * update symbols file
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 08 Jan 2021 14:58:55 +0100
+
+libsecp256k1 (0.1~20201209-3) experimental; urgency=medium
+
+  * enable experimental modules extrakeys schnorrsig
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 04 Jan 2021 19:54:30 +0100
+
+libsecp256k1 (0.1~20201209-2) experimental; urgency=medium
+
+  * fix enable modules recovery ecdh,
+    and stop enable experimental (even when targeting experimental)
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 04 Jan 2021 18:37:50 +0100
+
+libsecp256k1 (0.1~20201209-1) experimental; urgency=medium
+
+  [ upstream ]
+  * development snapshot
+
+  [ Jonas Smedegaard ]
+  * declare compliance with Debian Policy 4.5.1
+  * copyright: drop superfluous git protocol Source URL
+  * use debhelper compatibility 10 (not 0)
+  * update source script copyright-check
+  * copyright: update coverage
+  * unfuzz patch 1001
+  * update build routines
+  * enable module ecdh;
+    closes: bug#940967, thanks to Janus Troelsen
+  * simplify build;
+    stop build-depend on cdbs libtool dh-autoreconf
+  * use debhelper compatibility level 13 (not 10);
+    build-depend on debhelper-compat (not debhelper)
+  * update long description, based on upstream README
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 04 Jan 2021 01:42:12 +0100
+
+libsecp256k1 (0.1~20190905-1) experimental; urgency=medium
+
+  [ upstream ]
+  * Snapshot from upstream git.
+
+  [ Jonas Smedegaard ]
+  * Fix have development package depend on pkg-config.
+  * Update watch file: Fix syntax.
+  * Declare compliance with Debian Policy 4.4.0.
+  * Rename patch fix_automake.patch → 1001_fix_automake.patch,
+    and document patch name micro-policy in debian/patches/README.
+    Unfuzz patch 1001.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 23 Sep 2019 09:38:32 +0200
+
+libsecp256k1 (0.1~20190331-1) experimental; urgency=medium
+
+  [ upstream ]
+  * Snapshot from upstream git.
+
+  [ Jonas Smedegaard ]
+  * Update copyright info:
+    + Extend coverage for main upstream authors.
+    + Extend coverage of packaging.
+  * Simplify rules.
+    Stop build-depend on dh-buildinfo.
+  * Set Rules-Requires-Root: no.
+  * Update watch file:
+    + Use git mode.
+    + Rewrite usage comment.
+  * Update patch to fix automake.
+  * Update symbols file: Add 3 symbols.
+  * Use autoreconf (not custom rules).
+    Build-depend on dh-autoreconf.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 10 Apr 2019 11:32:42 +0200
+
+libsecp256k1 (0.1~20170810-2) unstable; urgency=medium
+
+  * Update Vcs-* fields: Source moved to Salsa.
+  * Declare compliance with Debian Policy 4.1.4.
+  * Use tracker.debian team email as Maintainer.
+    Closes: Bug#899587. Thanks to Christoph Biedl.
+  * Update watch file: Add usage comment. Use substitution strings.
+  * Update package relations:
+    + Stop build-depend explicitly on recent dpkg-dev:
+      Needed version satisfied even in oldstable.
+    + Relax to build-depend unversioned on d-shlibs:
+      Needed version satisfied even in oldstable.
+  * Tighten lintian overrides regarding License-Reference.
+  * Update copyright info: Extend coverage of Debian packaging.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 21 Jun 2018 11:36:23 +0200
+
+libsecp256k1 (0.1~20170810-1) unstable; urgency=medium
+
+  [ upstream ]
+  * Snapshot from upstream git.
+    + Add secp256k1_ec_pubkey_negate and secp256k1_ec_privkey_negate.
+    + Fix typos in code comments and documentation.
+    + Document secp256k1_context_randomize.
+    + Use checked_alloc in test.
+    + Remove executable bit from secp256k1.c
+    + Minor optimizations to _scalar_inverse to save 4M.
+    + Unroll secp256k1_fe_(get|set)_b32 for 5x52.
+    + Unroll secp256k1_fe_(get|set)_b32 for 10x26.
+    + Fix benchmark print_number infinite loop.
+    + Further shorten the addition chain for scalar inversion.
+    + Remove residual parts from the schnorr expirement.
+    + add pubkey prefix constants to include/secp256k1.h.
+    + Remove redundant conditional expression.
+    + Fix wnaf_const documentation with respect to return value and
+      number of words set.
+
+  [ Jonas Smedegaard ]
+  * Modernize Vcs-* fields: Use git (not cgit) in path.
+  * Declare compliance with Debian Policy 4.0.1.
+  * Advertise DEP3 format in patch headers.
+  * Modernize cdbs:
+    + Do copyright-check in maintainer script (not during build).
+    + Relax to build-depend unversioned on cdbs.
+    + Stop build-depend on licensecheck.
+  * Update symbols file.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 18 Aug 2017 13:23:27 +0200
+
+libsecp256k1 (0.1~20161228-1) unstable; urgency=medium
+
+  [ upstream ]
+  * Snapshot from upstream git.
+    + Remove Schnorr experiment.
+    + Add exhaustive tests.
+    + ecdsa_impl: replace scalar if-checks with VERIFY_CHECKs in
+      ecdsa_sig_sign.
+    + ecdh: test NULL-checking of arguments.
+    + recovery: add tests to cover API misusage.
+    + configure: add --enable-coverage to set options for coverage
+      analysis.
+    + group_impl.h: remove unused `secp256k1_ge_set_infinity` function.
+    + Make the libcrypto detection fail the newer API.
+
+  [ Jonas Smedegaard ]
+  * Modernize git-buildpackage config: Filter any .git* file.
+  * Drop obsolete lintian override regarding debhelper 9.
+  * Unfuzz patch.
+  * Update copyright info: Extend coverage of Debian packaging.
+  * Build-depend on libssl-dev (not libssl1.0-dev).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 10 Jan 2017 22:34:00 +0100
+
+libsecp256k1 (0.1~20161026-1) unstable; urgency=medium
+
+  [ upstream ]
+  * Snapshot from upstream git.
+    + Fix secp256k1_fe_inv_all_var parameter order.
+    + Fix secp256k1_ge_set_all_gej_var parameter order.
+    + Fix secp256k1_ge_set_table_gej_var parameter order.
+    + Remove guarantees about memcmp-ability.
+    + Fix auto-enabled static precompuatation.
+    + Update scalar_4x64_impl.h.
+    + Restructure nonce clearing.
+
+  [ Jonas Smedegaard ]
+  * Update watch file: Use substitution string @PACKAGE@.
+  * Refresh patch.
+  * Simplify README.source: Skip options set in gbp.conf.
+  * Update copyright info:
+    + Use license shortname FSFAP (not FSFUL~generic).
+    + Add another copyright holder (no new license).
+  * Build-depend on libssl1.0-dev (with older libssl-dev as fallback):
+    OpenSSL 1.1 not yet supported upstream.
+    Closes: Bug#828412. Thanks to Kurt Roeckx.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Thu, 17 Nov 2016 01:49:54 +0100
+
+libsecp256k1 (0.1~20160804-1) unstable; urgency=medium
+
+  [ upstream ]
+  * Snapshot from upstream git.
+    + align shared files copyright/comments to bitcoinj's.
+    + Add some missing VERIFY_CHECK(ctx != NULL) for functions that use
+      ARG_CHECK.
+    + bench_ecdh: fix call to secp256k1_context_create.
+    + Cast pointers through uintptr_t under JNI.
+    + Update bitcoin-core GitHub links.
+    + JNI: Only call ecdsa_verify if its inputs parsed correctly.
+    + Add testcase which hits additional branch in secp256k1_scalar_sqr.
+    + Fix state size in sha256 struct.
+    + Fix undefs in hash_impl.h.
+    + ARM assembly implementation of field_10x26 inner.
+    + Test whether ECDH and Schnorr are enabled for JNI.
+    + build: verify that the native compiler works for static precomp.
+    + ecmult_const: unify endomorphism and non-endomorphism skew cases.
+    + Add Jacobi symbol test via GMP.
+    + Add function for testing quadratic residue field/group elements.
+    + configure: add flag to disable OpenSSL tests.
+    + Make secp256k1_fe_sqrt constant time.
+    + Add string.h include to ecmult_impl.
+
+  [ Jonas Smedegaard ]
+  * Modernize CDBS: Build-depend on licensecheck (not devscripts).
+  * Update copyright info: Adjust some files now licensed Apache-2.0.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 27 Aug 2016 13:53:04 +0200
+
+libsecp256k1 (0.1~20160216-3) unstable; urgency=medium
+
+  * Relax symbols check on experimental builds.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 24 Apr 2016 19:16:59 +0200
+
+libsecp256k1 (0.1~20160216-2) unstable; urgency=medium
+
+  * Update copyright info:
+    + Fix URLs to upstream source and issue tracker.
+  * Build with --disable-jni, to avoid broken links to disabled
+    experimental modules.
+  * Stop build-depend on default-jdk-headless or libguava-java.
+  * Drop JNI-related symbols.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 05 Apr 2016 03:30:51 +0200
+
+libsecp256k1 (0.1~20160216-1) unstable; urgency=low
+
+  * Initial release.
+    Closes: bug#819887.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 03 Apr 2016 20:23:38 +0200

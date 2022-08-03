@@ -1,0 +1,7 @@
+version=4
+# check: uscan --report
+# update: gbp import-orig --upstream-vcs-tag=vX.Y.Z --uscan
+
+opts=\
+mode=git,pgpmode=none,pretty=0.1~%cd \
+https://github.com/bitcoin/secp256k1 HEAD
