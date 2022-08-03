@@ -1,3 +1,9 @@
+libsecp256k1 (0.99~20220227-1) unstable; urgency=medium
+
+  * Build for Cardano
+
+ -- Timotheus Pokorra <timotheus@pokorra.de>  Wed, 3 Aug 2022 10:33:49 +0200
+
 libsecp256k1 (0.1~20220711-1) unstable; urgency=medium
 
   * Team upload
