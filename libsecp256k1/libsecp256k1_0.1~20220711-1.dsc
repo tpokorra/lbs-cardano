@@ -5,7 +5,7 @@ Format: 3.0 (quilt)
 Source: libsecp256k1
 Binary: libsecp256k1-0, libsecp256k1-dev
 Architecture: any
-Version: 0.1~20220227-1
+Version: 0.99~20220227-1
 Maintainer: Debian Cryptocoin Team <team+cryptocoin@tracker.debian.org>
 Uploaders: Jonas Smedegaard <dr@jones.dk>
 Homepage: https://github.com/bitcoin/secp256k1
