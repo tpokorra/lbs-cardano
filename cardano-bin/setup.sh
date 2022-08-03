@@ -3,13 +3,12 @@
 branch=$1
 
 apt-get -y install rsync curl git sudo xz-utils || exit -1
-apt-get update
-apt-get -y install gnupg apt-transport-https ca-certificates libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev tmux jq wget libncursesw5 libsecp256k1-dev || exit -1
+apt-get -y install gnupg apt-transport-https ca-certificates libffi-dev libgmp-dev libssl-dev libtinfo-dev libsystemd-dev zlib1g-dev tmux jq wget libncursesw5 || exit -1
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4796B710919684AC || exit -1
 echo 'deb http://downloads.haskell.org/debian buster main' >> /etc/apt/sources.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA3CBA3FFE22B574 || exit -1
 apt-get update
-apt-get -y install libsodium-dev || exit -1
+apt-get -y install libsodium-dev libsecp256k1-dev || exit -1
 # see http://downloads.haskell.org/debian/
 # ghc-9.0.1 is too new
 # see https://github.com/input-output-hk/cardano-node/issues/2351 and https://forum.cardano.org/t/fresh-build-of-1-14-1-causes-could-not-resolve-dependencies-exception/35023
